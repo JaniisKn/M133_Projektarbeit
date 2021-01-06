@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 55vh;
+}
+
+.card {
+    margin: 2%;
+    padding: 2%;
+}
+
+footer {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

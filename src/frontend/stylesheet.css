@@ -12,14 +12,14 @@
 }
 
 footer {
-    height: 120px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 header {
-    height: 120px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center; 

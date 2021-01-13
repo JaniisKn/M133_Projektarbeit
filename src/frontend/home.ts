@@ -13,14 +13,18 @@ export async function loadOverview() {
 
     for (const product of products) {
         let productCard = document.createElement("card");
-        let title = document.createElement("h1");
+        let title = document.createElement("h5");
         let price = document.createElement("p");
+        let picture = document.createElement("img");
 
         productCard.className = "card";
         title.innerHTML = product.name;
-        price.innerHTML = product.price.toString();
+        price.innerHTML = product.price + '.-';
+        picture.src = `./media/${product.img}`;
+        picture.className = "product-picture-overview"
 
         productCard.appendChild(title);
+        productCard.appendChild(picture);
         productCard.appendChild(price);
         overview.appendChild(productCard);
     }

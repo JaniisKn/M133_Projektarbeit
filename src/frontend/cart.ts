@@ -1,0 +1,1 @@
+numberOfItems: number = 0;

@@ -1,13 +1,13 @@
 // deno-lint-ignore-file
 /// <reference lib="dom" />
 
-import { Products } from "../common/products.ts";
+import { Product } from "../backend/product.ts";
 
 loadOverview();
 
 export async function loadOverview() {
-    const response = await fetch("/api/persons");
-    const products = Products;
+    const response = await fetch("/api/products");
+    const products: Product[] = await response.json();
 
     const overview = document.getElementById("overview");
 
@@ -16,17 +16,21 @@ export async function loadOverview() {
         let title = document.createElement("h5");
         let price = document.createElement("p");
         let picture = document.createElement("img");
+        let link = document.createElement("a");
 
         productCard.className = "card";
-        title.innerHTML = product.name;
-        price.innerHTML = product.price + '.-';
-        picture.src = `./media/${product.img}`;
-        picture.className = "product-picture-overview"
-
+        title.innerHTML = product.productName;
+        price.innerHTML = product.normalPrice + '.-';
+        picture.src = `./media/${product.imageName}`;
+        picture.className = "product-picture-overview";
+        link.href = `./product-detail.html?productId=${product.id}`;
+        link.setAttribute("style", "color: black; text-decoration: none;");
+        
+        link.appendChild(productCard);
         productCard.appendChild(title);
         productCard.appendChild(picture);
         productCard.appendChild(price);
-        overview.appendChild(productCard);
+        overview.appendChild(link);
     }
 
     /*for (const person of persons) {

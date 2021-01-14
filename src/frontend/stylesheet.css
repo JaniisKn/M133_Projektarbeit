@@ -11,8 +11,7 @@
 }
 
 .card {
-    margin: 2%;
-    padding: 2%;
+    padding: 10px;
     width: 200px;
     height: 200px;
     align-self: center;
@@ -20,6 +19,15 @@
 
 .product-picture-overview {
     width: 100px;
+    align-self: center;
+}
+
+.img-product-detail {
+    width: 300px;
+}
+
+a {
+    margin: 20px;
     align-self: center;
 }
 

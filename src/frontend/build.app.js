@@ -6,12 +6,14 @@ async function loadOverview2() {
     for (const product of products){
         let productCard = document.createElement("card");
         let title = document.createElement("h5");
-        let price = document.createElement("p");
+        let normalPrice = document.createElement("del");
+        let specialOffer = document.createElement("p");
         let picture = document.createElement("img");
         let link = document.createElement("a");
         productCard.className = "card";
         title.innerHTML = product.productName;
-        price.innerHTML = product.normalPrice + '.-';
+        normalPrice.innerHTML = product.normalPrice;
+        specialOffer.innerHTML = product.specialOffer;
         picture.src = `./media/${product.imageName}`;
         picture.className = "product-picture-overview";
         link.href = `./product-detail.html?productId=${product.id}`;
@@ -19,7 +21,8 @@ async function loadOverview2() {
         link.appendChild(productCard);
         productCard.appendChild(title);
         productCard.appendChild(picture);
-        productCard.appendChild(price);
+        productCard.appendChild(normalPrice);
+        productCard.appendChild(specialOffer);
         overview.appendChild(link);
     }
 }

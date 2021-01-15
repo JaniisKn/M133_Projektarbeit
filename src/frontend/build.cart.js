@@ -1,6 +1,10 @@
 loadCart();
 async function loadCart() {
     console.log("Halloo");
+    const response = await fetch("/api/cart");
+    const cartItems = await response.json();
+    console.log("Response: " + response);
+    console.log(cartItems);
     let cardOverviewTableBody = document.getElementById("cart-overview");
     for(let index = 0; index < 3; index++){
         let itemrow = document.createElement("tr");

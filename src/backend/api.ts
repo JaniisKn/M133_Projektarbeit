@@ -23,9 +23,24 @@ router.get("/api/product-detail/:id", (context) => {
 
 router.post("/api/addToCart/:id", (context) => {
     console.log("Hallooooooo");
+    let isProductInCart = false;
     let product = getProduct(context.params.id!);
     console.log(product);
-    cart.push([product, 1]);
+    if (cart.length == 0) {
+        cart.push([product, 1]);
+    } else {
+        cart.forEach(productInCart => {
+            if (productInCart[0] == product) {
+                productInCart[1]++;
+                isProductInCart = true;
+            }
+        });
+        if (!isProductInCart) {
+            cart.push([product, 1]); 
+        }
+    }
+
+    //cart.push([product, 1]);
     console.log(cart);
 
     context.response.body = cart;

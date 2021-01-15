@@ -41,6 +41,10 @@
     margin: 10px;
 }
 
+.img-cart-overview {
+    width: 80px;
+}
+
 a {
     margin: 20px;
     align-self: center;

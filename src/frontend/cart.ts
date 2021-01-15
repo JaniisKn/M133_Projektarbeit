@@ -10,22 +10,26 @@ async function loadCart() {
     let cardOverviewTableBody = document.getElementById("cart-overview");;
 
     cartItems.forEach(product => {
-        let itemrow = document.createElement("tr");
-            let itemName = document.createElement("td");
-            let itemImgRow = document.createElement("td");
-            let itemPrice = document.createElement("td");
-            let itemAmount = document.createElement("td");
+        let productRow = document.createElement("tr");
+            let productName = document.createElement("td");
+            let productImgTd = document.createElement("td");
+            let productPrice = document.createElement("td");
+            let productAmount = document.createElement("td");
+            let productImg = document.createElement("img");
 
-            itemName.textContent = product[0].productName;
-            itemImgRow.textContent = product[0].productName;
-            itemPrice.textContent = product[0].specialOffer.toString();
-            itemAmount.textContent = product[1].toString();
 
-            itemrow.appendChild(itemName);
-            itemrow.appendChild(itemImgRow);
-            itemrow.appendChild(itemPrice);
-            itemrow.appendChild(itemAmount);
+            productName.textContent = product[0].productName;
+            productImg.src = `./media/${product[0].imageName}`;
+            productImg.className = 'img-cart-overview'
+            productPrice.textContent = product[0].specialOffer.toString();
+            productAmount.textContent = product[1].toString();
 
-            cardOverviewTableBody.appendChild(itemrow);
+            productImgTd.appendChild(productImg);
+            productRow.appendChild(productName);
+            productRow.appendChild(productImgTd);
+            productRow.appendChild(productPrice);
+            productRow.appendChild(productAmount);
+
+            cardOverviewTableBody.appendChild(productRow);
     });
 }

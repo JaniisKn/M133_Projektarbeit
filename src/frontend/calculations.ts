@@ -9,10 +9,10 @@ export class Calculations {
     const cartItems: [Product, number][] = await responseMinicart.json();
 
     cartItems.forEach(product => {
-        price +=  Math.round(product[0].specialOffer * product[1] * 100) / 100;
+        price +=  product[0].specialOffer * product[1];
     });
 
     console.log("total Preis: " + price);
-    return price;
+    return Math.round(price * 100) / 100;
     }
 }

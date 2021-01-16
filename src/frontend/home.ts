@@ -23,8 +23,8 @@ export async function loadOverview() {
         
         productCard.className = "card";
         title.innerHTML = product.productName;
-        normalPrice.innerHTML = product.normalPrice;
-        specialOffer.innerHTML = product.specialOffer;
+        normalPrice.innerHTML = product.normalPrice + " CHF";
+        specialOffer.innerHTML = product.specialOffer + " CHF";
         picture.src = `./media/${product.imageName}`;
         picture.className = "product-picture-overview";
         link.href = `./product-detail.html?productId=${product.id}`;

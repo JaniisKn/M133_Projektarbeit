@@ -53,6 +53,12 @@
     margin: 50px;
 }
 
+.btn-checkout-changeAmount {
+    margin: 8px;
+    padding: 2px;
+    width: 30px;
+}
+
 a {
     margin: 20px;
     align-self: center;

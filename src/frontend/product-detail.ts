@@ -28,7 +28,6 @@ async function loadProductDetail() {
 }
 
 async function addToCart() {
-    console.log("Dem Einkaufswagen hinzugefügt");
     const productId = new URLSearchParams(window.location.search).get("productId");
     await fetch(`http://localhost:8000/api/addToCart/${productId}`, {
         method: 'POST'

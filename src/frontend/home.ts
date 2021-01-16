@@ -9,6 +9,8 @@ export async function loadOverview() {
     const response = await fetch("/api/products");
     const products: Product[] = await response.json();
 
+    await loadMinicart();
+
     const overview = document.getElementById("overview");
 
     for (const product of products) {
@@ -35,12 +37,20 @@ export async function loadOverview() {
         productCard.appendChild(specialOffer);
         overview.appendChild(link);
     }
+}
 
-    /*for (const person of persons) {
-        list.innerHTML += `
-            <li>
-                <a href="./page2.html?personId=${person.id}">${person.firstName} ${person.lastName}</a>
-            </li>
-        `;
-    }*/
+async function loadMinicart() {
+    const btnCart = document.getElementById("btnCart");
+    const minicart = document.getElementById("minicart");
+
+    const responseMinicart = await fetch("/api/cart");
+    const cartItems: [Product, number][] = await responseMinicart.json();
+    const ul = document.createElement("ul");
+
+    cartItems.forEach(product => {
+        const li = document.createElement("li");
+        li.innerText = product[0].productName + " " + product[1].toString();
+        ul.appendChild(li);
+        minicart.appendChild(ul);
+    });
 }

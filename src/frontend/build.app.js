@@ -2,6 +2,7 @@ loadOverview2();
 async function loadOverview2() {
     const response = await fetch("/api/products");
     const products = await response.json();
+    await loadMinicart();
     const overview = document.getElementById("overview");
     for (const product of products){
         let productCard = document.createElement("card");
@@ -25,6 +26,19 @@ async function loadOverview2() {
         productCard.appendChild(specialOffer);
         overview.appendChild(link);
     }
+}
+async function loadMinicart() {
+    const btnCart = document.getElementById("btnCart");
+    const minicart = document.getElementById("minicart");
+    const responseMinicart = await fetch("/api/cart");
+    const cartItems = await responseMinicart.json();
+    const ul = document.createElement("ul");
+    cartItems.forEach((product)=>{
+        const li = document.createElement("li");
+        li.innerText = product[0].productName + " " + product[1].toString();
+        ul.appendChild(li);
+        minicart.appendChild(ul);
+    });
 }
 const loadOverview1 = loadOverview2;
 export { loadOverview1 as loadOverview };

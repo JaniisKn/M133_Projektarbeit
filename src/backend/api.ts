@@ -22,10 +22,8 @@ router.get("/api/product-detail/:id", (context) => {
 });
 
 router.post("/api/addToCart/:id", (context) => {
-    console.log("Hallooooooo");
     let isProductInCart = false;
     let product = getProduct(context.params.id!);
-    console.log(product);
     if (cart.length == 0) {
         cart.push([product, 1]);
     } else {
@@ -39,9 +37,6 @@ router.post("/api/addToCart/:id", (context) => {
             cart.push([product, 1]); 
         }
     }
-
-    //cart.push([product, 1]);
-    console.log(cart);
 
     context.response.body = cart;
     context.response.status = 200;

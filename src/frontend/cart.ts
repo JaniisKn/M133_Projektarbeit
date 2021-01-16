@@ -5,7 +5,6 @@ loadCart();
 async function loadCart() {
     const response = await fetch("/api/cart");
     const cartItems: [Product, number][] = await response.json();
-    console.log(cartItems);
 
     let cardOverviewTableBody = document.getElementById("cart-overview");;
 

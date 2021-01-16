@@ -45,6 +45,11 @@
     width: 80px;
 }
 
+.btn {
+    float: right;
+    margin: 50px;
+}
+
 a {
     margin: 20px;
     align-self: center;
@@ -64,5 +69,5 @@ header {
     height: 100px;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }

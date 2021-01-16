@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="stylesheet.css">
-    <script type="module" src="build.app.js"></script>
 </head>
 
 <body>
@@ -19,18 +18,10 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-                            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                        </svg>
-                    </a>
-                </li>
-                <li class="nav-item" id="btnCart">
+                <li class="nav-item">
                     <a class="nav-link" href="./cart.html">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-cart2" viewBox="0 0 16 16">
-                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                       </svg>
                     </a>
                 </li>
@@ -38,11 +29,25 @@
         </div>
     </nav>
     <main>
-        <div class="bg-light">
-            <div id="minicart"></div>
-            <h2 class="text-center">Sortiment</h2>
-            <div class="flex-container" id="overview"></div>
+        <div>
+            <h2 class="text-center">Checkout</h2>
+            <form>
+                <div class="form-group">
+                  <label>Vorname</label>
+                  <input type="text" class="form-control" placeholder="Vorname eingeben">
+                </div>
+                <div class="form-group">
+                  <label>Nachname</label>
+                  <input type="text" class="form-control" placeholder="Nachname eingeben">
+                </div>
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input type="email" class="form-control" placeholder="Email eingeben">
+                </div>
+                <button type="submit" class="btn btn-outline-secondary btn-lg">Submit</button>
+              </form>
         </div>
+        <script src="./build.checkout.js"></script>
     </main>
     <footer class="bg-dark text-white">
         <p>M133 Projektarbeit Janis Kneubühler</p>

@@ -64,4 +64,10 @@ router.delete("/api/removeFromCart/:id", (context) => {
     context.response.status = 200;
 });
 
+router.delete("/api/checkout", (context) => {
+    cart = [];
+
+    context.response.status = 200;
+});
+
 export const api = router.routes();

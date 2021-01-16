@@ -15,3 +15,9 @@ const [diagnostics3, emit3] = await Deno.bundle(
 );
 
 await Deno.writeTextFile("./src/frontend/build.cart.js", emit3);
+
+const [diagnostics4, emit4] = await Deno.bundle(
+    "./src/frontend/checkout.ts",
+);
+
+await Deno.writeTextFile("./src/frontend/build.checkout.js", emit4);

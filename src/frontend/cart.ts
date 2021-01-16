@@ -18,12 +18,8 @@ async function loadCart() {
         let productPrice = document.createElement("td");
         let productAmount = document.createElement("td");
         let productPriceTotal = document.createElement("td");
-        let deleteTd = document.createElement("td");
         let productImg = document.createElement("img");
-        let deleteBtn = document.createElement("button");
 
-        deleteBtn.innerHTML = "X";
-        deleteBtn.addEventListener("click", removeFromCart);
         productName.textContent = product[0].productName;
         productImg.src = `./media/${product[0].imageName}`;
         productImg.className = 'img-cart-overview'
@@ -31,14 +27,12 @@ async function loadCart() {
         productAmount.textContent = product[1].toString();
         productPriceTotal.textContent = `CHF ${totalPrice.toFixed(2)}`;
 
-        deleteTd.appendChild(deleteBtn);
         productImgTd.appendChild(productImg);
         productRow.appendChild(productName);
         productRow.appendChild(productImgTd);
         productRow.appendChild(productPrice);
         productRow.appendChild(productAmount);
         productRow.appendChild(productPriceTotal);
-        productRow.appendChild(deleteTd);
 
         cardOverviewTableBody.appendChild(productRow);
     });
@@ -52,9 +46,4 @@ async function loadCart() {
     totalPrice.innerText = `CHF ${await Calculations.getTotalPrice()}`;
     
     btnCart.appendChild(totalPrice);
-}
-
-async function removeFromCart() {
-    //To-Do ${productId}
-    const response = await fetch(`/api/cart/remove/002`);
 }

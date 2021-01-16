@@ -19,10 +19,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="./cart.html">
+                    <a id="btnCart" class="nav-link" href="./cart.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                      </svg>
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                        </svg>
                     </a>
                 </li>
             </ul>
@@ -33,19 +33,19 @@
             <h2 class="text-center">Checkout</h2>
             <form>
                 <div class="form-group">
-                  <label>Vorname</label>
-                  <input type="text" class="form-control" placeholder="Vorname eingeben">
+                    <label>Vorname</label>
+                    <input id="prename" type="text" class="form-control" placeholder="Vorname eingeben" required>
                 </div>
                 <div class="form-group">
-                  <label>Nachname</label>
-                  <input type="text" class="form-control" placeholder="Nachname eingeben">
+                    <label>Nachname</label>
+                    <input id="lastname" type="text" class="form-control" placeholder="Nachname eingeben" required>
                 </div>
                 <div class="form-group">
-                  <label>Email address</label>
-                  <input type="email" class="form-control" placeholder="Email eingeben">
+                    <label>Email address</label>
+                    <input id="email" type="email" class="form-control" placeholder="Email eingeben" required>
                 </div>
                 <button type="submit" class="btn btn-outline-secondary btn-lg">Submit</button>
-              </form>
+            </form>
         </div>
         <script src="./build.checkout.js"></script>
     </main>

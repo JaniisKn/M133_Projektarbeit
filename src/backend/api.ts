@@ -46,21 +46,6 @@ router.get("/api/cart", (context) => {
     context.response.body = cart;
 });
 
-router.delete("/api/cart/remove/:id", (context) => {
-    console.log("Cart before: " + cart);
-    let position: number = 0; 
-    cart.forEach(productInCart => {
-        if (productInCart[0].id == context.params.id!) {
-            cart.slice(position);
-        }
-        position++;
-    });
-    console.log("Cart after: " + cart);
-
-    context.response.status = 200;
-});
-
-
 function getProduct(productId: string): Product {
     return products.find((product) => product.id == productId)!;
 }

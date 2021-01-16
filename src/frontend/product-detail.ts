@@ -15,12 +15,12 @@ async function loadProductDetail() {
     document.getElementById("title-product").innerText = product.productName;
     document.getElementById("img-product").src = `../media/${product.imageName}`;
     document.getElementById("description-product").innerText = product.description;
-    document.getElementById("price-product").innerText = "Preis: " + product.specialOffer + " CHF";
+    document.getElementById("price-product").innerText = `Preis: CHF ${product.specialOffer.toFixed(2)}`;
     
     const btnCart = document.getElementById("btnCart");
     const totalPrice = document.createElement("span");
     totalPrice.id = "totalPriceSpan";
-    totalPrice.innerText = `${await Calculations.getTotalPrice()} CHF`;
+    totalPrice.innerText = `CHF ${await Calculations.getTotalPrice()}`;
     
     btnCart.appendChild(totalPrice);
     

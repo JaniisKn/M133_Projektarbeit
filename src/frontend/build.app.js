@@ -4,10 +4,9 @@ class Calculations {
         const responseMinicart = await fetch("/api/cart");
         const cartItems = await responseMinicart.json();
         cartItems.forEach((product)=>{
-            price += Math.round(product[0].specialOffer * product[1] * 100) / 100;
+            price += product[0].specialOffer * product[1];
         });
-        console.log("total Preis: " + price);
-        return price;
+        return price.toFixed(2);
     }
 }
 loadOverview2();
@@ -24,8 +23,8 @@ async function loadOverview2() {
         let link = document.createElement("a");
         productCard.className = "card";
         title.innerHTML = product.productName;
-        normalPrice.innerHTML = product.normalPrice;
-        specialOffer.innerHTML = product.specialOffer;
+        normalPrice.innerHTML = `CHF ${product.normalPrice.toFixed(2)}`;
+        specialOffer.innerHTML = `CHF ${product.specialOffer.toFixed(2)}`;
         picture.src = `./media/${product.imageName}`;
         picture.className = "product-picture-overview";
         link.href = `./product-detail.html?productId=${product.id}`;
@@ -39,7 +38,7 @@ async function loadOverview2() {
     }
     const btnCart = document.getElementById("btnCart");
     const totalPrice = document.createElement("span");
-    totalPrice.innerText = `${await Calculations.getTotalPrice()} CHF`;
+    totalPrice.innerText = `CHF ${await Calculations.getTotalPrice()}`;
     btnCart.appendChild(totalPrice);
 }
 const loadOverview1 = loadOverview2;

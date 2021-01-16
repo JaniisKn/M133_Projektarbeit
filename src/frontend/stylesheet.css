@@ -58,6 +58,10 @@ a {
     align-self: center;
 }
 
+del {
+    color: red;
+}
+
 footer {
     position: fixed;
     left: 0;

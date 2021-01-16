@@ -23,8 +23,8 @@ export async function loadOverview() {
         
         productCard.className = "card";
         title.innerHTML = product.productName;
-        normalPrice.innerHTML = product.normalPrice + " CHF";
-        specialOffer.innerHTML = product.specialOffer + " CHF";
+        normalPrice.innerHTML = `CHF ${product.normalPrice.toFixed(2)}`;
+        specialOffer.innerHTML = `CHF ${product.specialOffer.toFixed(2)}`;
         picture.src = `./media/${product.imageName}`;
         picture.className = "product-picture-overview";
         link.href = `./product-detail.html?productId=${product.id}`;
@@ -40,7 +40,7 @@ export async function loadOverview() {
 
     const btnCart = document.getElementById("btnCart");
     const totalPrice = document.createElement("span");
-    totalPrice.innerText = `${await Calculations.getTotalPrice()} CHF`;
+    totalPrice.innerText = `CHF ${await Calculations.getTotalPrice()}`;
 
     btnCart.appendChild(totalPrice);
 }

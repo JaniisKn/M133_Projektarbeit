@@ -12,7 +12,6 @@ export class Calculations {
         price +=  product[0].specialOffer * product[1];
     });
 
-    console.log("total Preis: " + price);
-    return Math.round(price * 100) / 100;
+    return price.toFixed(2);
     }
 }

@@ -1,3 +1,6 @@
+.nav-item a div { display: none; }
+.nav-item a:hover div { display: block; }
+
 .header-img {
     width: 80px;
 }
